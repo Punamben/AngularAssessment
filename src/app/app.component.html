@@ -1,0 +1,66 @@
+<div style="text-align:center; padding: 20px;">
+  <h3>
+    Availity Registration
+  </h3>
+</div>
+
+<div class="container">
+  <div class="row">
+      <div class="col-md-4 offset-md-4">
+          <form [formGroup]="registerForm" (ngSubmit)="signup();">
+            <div class="formbox">
+                <div class="form-group">
+                  <input type="text" formControlName="firstName" class="form-control" placeholder="First Name" [ngClass]="{ 'is-invalid': submitted && fval.firstName.errors }"/>
+                  <div *ngIf="submitted && fval.firstName.errors" class="invalid-feedback">
+                      <div *ngIf="fval.firstName.errors.required">
+                          First Name is required and must be a valid name
+                      </div>                    
+                  </div>
+                </div>
+                <div class="form-group">
+                  <input type="text" formControlName="lastName" class="form-control" placeholder="Last Name" [ngClass]="{ 'is-invalid': submitted && fval.lastName.errors }"/>
+                  <div *ngIf="submitted && fval.lastName.errors" class="invalid-feedback">
+                      <div *ngIf="fval.lastName.errors.required">
+                          Last Name is required and must be a valid name
+                      </div>                    
+                  </div>
+                </div>
+                <div class="form-group">
+                  <input type="text" formControlName="npiNumber" class="form-control" placeholder="NPI Number" [ngClass]="{ 'is-invalid': submitted && fval.npiNumber.errors }"/>
+                  <div *ngIf="submitted && fval.npiNumber.errors" class="invalid-feedback">
+                      <div *ngIf="fval.npiNumber.errors.required">
+                          NPI number is required and must be a valid name
+                      </div>                    
+                  </div>
+                </div>
+                <div class="form-group">
+                  <input type="text" formControlName="businessAddress" class="form-control" placeholder="Business Address" [ngClass]="{ 'is-invalid': submitted && fval.businessAddress.errors }"/>
+                  <div *ngIf="submitted && fval.businessAddress.errors" class="invalid-feedback">
+                      <div *ngIf="fval.businessAddress.errors.required">
+                          Business Address is required and must be a valid name
+                      </div>                    
+                  </div>
+                </div>
+                <div class="form-group">
+                  <input type="text" formControlName="phone" class="form-control" placeholder="Telephone No." maxlength="12" minlength="10" [ngClass]="{ 'is-invalid': submitted && fval.phone.invalid }" required />
+                  <div *ngIf="submitted && fval.phone.errors" class="invalid-feedback">
+                      <div *ngIf="fval.phone.errors.required">Telephone is required</div>
+                  </div>
+                </div> 
+                <div class="form-group">
+                  <input type="email" formControlName="email" class="form-control" placeholder="Email" [ngClass]="{ 'is-invalid': submitted && fval.email.errors }" />
+                  <div *ngIf="submitted && fval.email.errors" class="invalid-feedback">
+                      <div *ngIf="fval.email.errors.required">Email is required</div>
+                      <div *ngIf="fval.email.errors.email">Enter a valid email address</div>
+                  </div>
+                </div>                              
+                <div class="form-group">
+                  <button type="submit" class="btn btn-primary signin">Sign Up <span class="arrowbtn"><span
+                        class="fa fa-arrow-right"></span></span></button>
+                </div>
+              </div>
+          </form>
+        </div>
+  </div>
+</div>
+
